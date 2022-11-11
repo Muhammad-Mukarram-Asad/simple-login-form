@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn & SignUp Form</title>
+    <link rel="stylesheet" href="login signup form.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>LogIn & SignUp Form</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="form-div" class="col-12">
+                <div class="col-12">
+                    <i onclick="show_hide()" id="cross_icon" class="fa-solid fa-xmark"></i>
+                    <!-- <img id="cross_icon" src="https://w7.pngwing.com/pngs/374/900/png-transparent-computer-icons-christian-cross-icon-design-christian-cross-thumbnail.png" alt="cross-icon"> -->
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <label>Name:</label>
+                    <input type="text" id="name" class="required-inputs" placeholder="Enter your name here:" required>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <label>Email:</label>
+                    <input type="email" id="email" class="required-inputs" placeholder="Enter your email here:"
+                        required>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <label>Password:</label>
+                    <input type="password" id="password" class="required-inputs" placeholder="Enter your password here:"
+                        required>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <label>Contact Number:</label>
+                    <input type="number" id="contact" class="required-inputs"
+                        placeholder="Enter your contact number here:" required>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <label>Age:</label>
+                    <input type="number" id="age" class="required-inputs" placeholder="Enter your age here:" required>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <button onclick="signUp()" type="button" class="btn btn-primary btn-lg btn-block">Submit
+                        Here</button>
+                </div>
+
+
+                <!-- <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="checkbox" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <input type="text" placeholder="Are you in University?" class="form-control"
+                        aria-label="Text input with checkbox">
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="radio" aria-label="Radio button for following text input">
+                        </div>
+                    </div>
+                    <input type="text" placeholder="Pakistani?" class="form-control"
+                        aria-label="Text input with radio button">
+                </div> -->
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- For sign-In data: -->
+    <div class="container" id="login-container" style="display: none;">
+        <div class="row">
+            <div id="form-div" class="col-12">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <label>Email:</label>
+                    <input type="email" id="login_email" class="required-inputs" placeholder="Enter your email here:"
+                        required>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <label>Password:</label>
+                    <input type="password" id="login_password" class="required-inputs" placeholder="Enter your password here:"
+                        required>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <button onclick="signIn()" type="button" class="btn btn-secondary btn-lg btn-block">LogIn
+                        </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        function show_hide() {
+            let cross_icon = document.getElementById('form-div');
+            if (cross_icon.style.display === "none") {
+                cross_icon.style.display = "block";
+            } else {
+                cross_icon.style.display = "none";
+                setTimeout(() => {
+                    cross_icon.style.display = "block";
+                }, 3000);
+            }
+        }
+
+    </script>
+    <script type="module" src="login signup form.js"></script>
+    <script type="module" src="login signup firebase.js"></script>
+
+    <!--
+    In order to hide navigation menu and show hamburger and x-mark icons copy the following code:
+          
+                    ***  HTML Code Below: ***
+
+    <div id="navigation" class="container">
+        <div class="row">
+            <div id="icon_div" class="col-12">
+                <i onclick="show()" id="hamburger_icon" class="fa-sharp fa-solid fa-bars"></i>
+                <i  onclick="hide()" id="cross_icon" class="fa-solid fa-xmark"></i>
+            </div>
+            <div style="display:none;" id="vertical_navbar" class="col-12">
+                <nav id="navbar-v">
+                    <ul>
+                        <a href="#welcome-section">
+                            <li>About Me</li>
+                        </a>
+                        <a href="#educational_life">
+                            <li>Education</li>
+                        </a>
+                        <a href="#projects">
+                            <li>Work</li>
+                        </a>
+                        <a href="#social_network">
+                            <li>Contact</li>
+                        </a>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+                        *** CSS Code: ***
+        @media screen and  (min-width: 200px) and (max-width:425px) {
+                #icon_div {
+                display: flex;
+                background-color: white;
+                justify-content: space-between;
+                }
+            
+                #hamburger_icon {
+                font-size: 50px;
+                }
+                #cross_icon {
+                font-size: 60px;
+                }
+            
+                #navbar ul {
+                display: none;
+                }
+            }
+
+                      *** JS Code Below: ***
+         <script>
+                function show()
+                {
+                    let vertical_navbar = document.getElementById('vertical_navbar');
+                    vertical_navbar.style.display = "block";
+                }
+
+                function hide()
+                {
+                    let vertical_navbar = document.getElementById('vertical_navbar');
+                    vertical_navbar.style.display = "none";
+                }
+        </script>
+
+-->
+
+
+</body>
+
+</html>
